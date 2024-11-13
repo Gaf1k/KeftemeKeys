@@ -16,6 +16,16 @@ public class CMD implements TabExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
+        if (!sender.hasPermission("keftemekeys.admin")){
+            sender.sendMessage(ChatUtil.translate(Plugin.getInstance().getConfig().getString("Messages.not_enough_permission")));
+            return true;
+        }
+
+        if (args.length == 0){
+            sender.sendMessage(ChatUtil.translate(Plugin.getInstance().getConfig().getString("Messages.error_command")));
+            return true;
+        }
+
         if (args[0].equalsIgnoreCase("reload")){
             Plugin.getInstance().reloadConfig();
             sender.sendMessage(ChatUtil.translate(Plugin.getInstance().getConfig().getString("Messages.reload_config")));
@@ -24,15 +34,6 @@ public class CMD implements TabExecutor {
 
         if (sender instanceof Player){
             Player player = (Player) sender;
-            if (!player.hasPermission("keftemekeys.admin")){
-                ChatUtil.sendConfigMessage(player,"Messages.not_enough_permission");
-                return true;
-            }
-
-            if (args.length == 0){
-                ChatUtil.sendConfigMessage(player,"Messages.error_command");
-                return true;
-            }
 
             if (args[0].equalsIgnoreCase("items")){
                 player.openInventory(MenuItems.instance.inventory);
