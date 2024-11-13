@@ -71,7 +71,7 @@ public class SwapEvents implements Listener{
             items[i] = config.getItemStack(keys.get(i));
         }
         ItemStack itemStack = items[random.nextInt(keys.size())];
-        ChatUtil.sendConfigMessage(player,"Messages.give_item");
+        ChatUtil.sendConfigMessage(player,"Messages.swap_key");
         player.getInventory().addItem(itemStack);
     }
 }
