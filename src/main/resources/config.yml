@@ -12,7 +12,13 @@ Key:
     - "&7Можно обменять на уникальный предмет"
     - "&7Прописав команду /keyswap"
   Glow: true
+# Шанс спавна ключа
   Chance_spawn: 20
+# Миры в которых будет спавниться ключ
+  Enabled_worlds:
+    - world
+    - world_the_end
+    - world_nether
 
 SwapMenu:
   swapButton:
