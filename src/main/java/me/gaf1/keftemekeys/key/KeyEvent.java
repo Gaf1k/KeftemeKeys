@@ -1,7 +1,9 @@
 package me.gaf1.keftemekeys.key;
 
 import me.gaf1.keftemekeys.Plugin;
+import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
+import org.bukkit.World;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Chest;
 import org.bukkit.entity.Entity;
@@ -10,6 +12,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.world.ChunkLoadEvent;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class KeyEvent implements Listener {
@@ -21,6 +25,9 @@ public class KeyEvent implements Listener {
         }
 
         Chunk chunk = event.getChunk();
+        if (!loadWorldsFromConfig().contains(chunk.getWorld())){
+            return;
+        }
 
         int chance = Plugin.getInstance().getConfig().getInt("Key.Chance_spawn");
         Random random = new Random();
@@ -45,6 +52,18 @@ public class KeyEvent implements Listener {
             }
         }
 
+    }
+
+    public List<World> loadWorldsFromConfig() {
+        List<World> worlds = new ArrayList<>();
+
+        List<String> worldNames = Plugin.getInstance().getConfig().getStringList("Key.Enabled_worlds");
+
+        for (String worldName : worldNames) {
+            worlds.add(Bukkit.getWorld(worldName));
+        }
+
+        return worlds;
     }
 
 }
