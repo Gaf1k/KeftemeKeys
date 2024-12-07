@@ -1,0 +1,57 @@
+#
+# Плагин создан Gaf1
+#
+# Исходный код: https://github.com/Gaf1k/KeftemeKeys
+# Discord: gaf1
+#
+# Пишите если нашли баги/ошибки
+#
+Key:
+  Name: "&#4498DB&lУ&#519FDE&lн&#5FA7E0&lи&#6CAEE3&lк&#79B5E5&lа&#87BDE8&lл&#94C4EA&lь&#A2CCED&lн&#AFD3F0&lы&#BCDAF2&lй &#D7E9F7&lк&#E4F0FA&lл&#F2F8FC&lю&#FFFFFF&lч"
+  Lore:
+    - "&7Можно обменять на уникальный предмет"
+    - "&7Прописав команду /keyswap"
+  Glow: true
+# Шанс спавна ключа
+  Chance_spawn: 20
+# Миры в которых будет спавниться ключ
+  Enabled_worlds:
+    - world
+    - world_the_end
+    - world_nether
+
+SwapMenu:
+  swapButton:
+    Material: GHAST_TEAR
+    Name: "&#08FBACОбменять ключ"
+    Lore:
+      - "&7Нажми и обменяй ключ на рандомный предмет"
+    Slot: 22
+  informationSlot:
+    Material: GRAY_STAINED_GLASS_PANE
+    Name: "&#B3FB08Где получить уникальный ключ?"
+    Lore:
+      - "&7Уникальные ключи появляются"
+      - "&7В естественно сгенерированных сундуках"
+      - "&7Во всех мирах с шансом 20%"
+    Slot:
+      - 45
+      - 46
+      - 47
+      - 48
+      - 49
+      - 50
+      - 51
+      - 52
+      - 53
+
+
+Messages:
+  no_key: "&cУ тебя нету ключа!"
+  swap_key: "&aТы успешно обменял уникальный ключ!"
+  full_inventory: "&cУ тебя нет места в инвентаре!"
+  error_command: "&cТы ввел команду неправильно!"
+  not_enough_permission: "&cУ тебя недостаточно прав!"
+  reload_config: "&aКонфиг успешно перезагружен!"
+
+
