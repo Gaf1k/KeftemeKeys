@@ -5,6 +5,7 @@ import me.gaf1.keftemekeys.items.MenuItems;
 import me.gaf1.keftemekeys.key.KeyEvent;
 import me.gaf1.keftemekeys.swap.SwapCMD;
 import me.gaf1.keftemekeys.swap.SwapEvents;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.yaml.snakeyaml.nodes.MappingNode;
 
@@ -20,6 +21,8 @@ public final class Plugin extends JavaPlugin {
     public void onEnable() {
         instance = this;
         saveDefaultConfig();
+
+        Metrics metrics = new Metrics(this, 24090);
 
         getCommand("keftemekeys").setExecutor(new CMD());
         getCommand("keftemekeys").setTabCompleter(new CMD());
