@@ -22,7 +22,7 @@ public final class Plugin extends JavaPlugin {
         instance = this;
         saveDefaultConfig();
 
-        Metrics metrics = new Metrics(this, 24090);
+        new Metrics(this, 24090);
 
         getCommand("keftemekeys").setExecutor(new CMD());
         getCommand("keftemekeys").setTabCompleter(new CMD());
